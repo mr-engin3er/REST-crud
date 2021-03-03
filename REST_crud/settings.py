@@ -25,7 +25,7 @@ SECRET_KEY = ')i=*f-x1dg(yrbpzm4&sccx#2(yru_s0m38rr%ss7gero)ij&!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,6 +42,9 @@ INSTALLED_APPS = [
 
     # DRF
     'rest_framework',
+
+    # our app
+    'crud',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +131,6 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.AllowAny',
     ]
 }
