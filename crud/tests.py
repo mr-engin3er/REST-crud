@@ -1,7 +1,6 @@
 from json import dumps
 from django.test import TestCase, Client
 from django.urls import reverse
-from rest_framework.test import APIRequestFactory
 from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED, HTTP_204_NO_CONTENT, HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST
 from .models import Employee
 from .api.serializers import EmployeeSerializer
@@ -110,6 +109,5 @@ class GetAllEmployeeTest(TestCase):
     def test_delete_invalid_single_employee(self):
         response = client.delete(
             reverse('crud:delete', kwargs={'pk': 5}),)
-        print(response.data.get('detail'))
         self.assertEqual(response.data.get('detail'), "Not found.")
         self.assertEqual(response.status_code, HTTP_404_NOT_FOUND)
