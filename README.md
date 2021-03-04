@@ -102,7 +102,7 @@ http://127.0.0.1:8000/detail/<int:id>
 Update single employee(PUT) 
 
 ```python
-url: http://127.0.0.1:8000/detail/<int:id>
+url: http://127.0.0.1:8000/update/<int:id>
 body: {"name": "","age": 15,"city": ""}
 ```
 
@@ -110,7 +110,7 @@ body: {"name": "","age": 15,"city": ""}
 Delete single employee(DELETE) 
 
 ```python
-http://127.0.0.1:8000/detail/<int:id>
+http://127.0.0.1:8000/delete/<int:id>
 ``` 
 
 
